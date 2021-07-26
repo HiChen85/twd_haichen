@@ -6,6 +6,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ['id','name', 'views', 'likes']
     list_display_links = ['name',]
     list_editable = ['views', 'likes',]
+    prepopulated_fields = {'slug': ('name',)}
 
 class PageAdmin(admin.ModelAdmin):
     list_display = ['title', 'category', 'url']#, 'views']
