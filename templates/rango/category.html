@@ -19,6 +19,7 @@
             {# The info above commented are from TWD book on Moodle, but test files can only accept the below info instead of the above.#}
             <strong>No pages currently in category.</strong>
         {% endif %}
+        <a href="/rango/category/{{ category.slug }}/add_page/">Add Page</a> <br/>
     {% else %}
         The specified category does not exist.
     {% endif %}
