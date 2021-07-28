@@ -41,7 +41,6 @@ def show_category(request, category_name_slug):
         context_dict['pages'] = pages
         context_dict['category'] = category
         context_dict['slug'] = category_name_slug
-        print('category_name_slug:  ',category_name_slug)
     except Category.DoesNotExist:
         context_dict['category'] = None
         context_dict['pages'] = None
@@ -66,7 +65,7 @@ def add_page(request, category_name_slug):
         category = None
 
     if category is None:
-        return redirect('/rango/')
+        return redirect(reverse('rango:index'))
 
     form = PageForm()
     if request.method == 'POST':
